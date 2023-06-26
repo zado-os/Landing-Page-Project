@@ -1,0 +1,10 @@
+body {
+	background: rgb(137, 60, 66);
+	background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(47, 49, 90, 1) 100%);
+	margin: 0;
+	font-family: "cairo", serif;
+	color: #fff;
+}
+html {
+	scroll-behavior: smooth !important;
+}
