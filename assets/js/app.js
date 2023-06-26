@@ -10,7 +10,7 @@ function scrollToCustomElement(sectionID) {
   let offsetPosition = element.offsetTop - 50; // Subtract 50 from offsetTop
   window.scrollTo({
     top: offsetPosition,
-    behavior: 'smooth' // Add smooth scrolling behavior
+    behavior: "smooth", // Add smooth scrolling behavior
   });
 }
 
@@ -29,22 +29,44 @@ document.addEventListener("scroll", () => {
 
   // Custom Element Positions
   customElementsPositions = [];
-  customElements.forEach((element) => customElementsPositions.push(element.getBoundingClientRect().top + window.scrollY));
+  customElements.forEach((element) =>
+    customElementsPositions.push(
+      element.getBoundingClientRect().top + window.scrollY
+    )
+  );
 
   // Adding and removing active elements
-  let addIndex = customElementsPositions.findIndex((element) => element > window.scrollY);
+  let addIndex = customElementsPositions.findIndex(
+    (element) => element > window.scrollY
+  );
   if (addIndex === -1) {
     addIndex = customElementsPositions.length - 1;
   }
   for (let i = 0; i < customElementsLength; i++) {
     if (addIndex === i) {
-      document.querySelector(".custom-menu-link-" + addIndex).classList.add("active");
-      document.querySelector(`.custom-menu-link-${addIndex} a`).classList.add("active-link");
-      document.querySelector(`section[data-nav="${customElements[i].getAttribute('data-nav')}"]`).classList.add("current-active-class");
+      document
+        .querySelector(".custom-menu-link-" + addIndex)
+        .classList.add("active");
+      document
+        .querySelector(`.custom-menu-link-${addIndex} a`)
+        .classList.add("active-link");
+      document
+        .querySelector(
+          `section[data-nav="${customElements[i].getAttribute("data-nav")}"]`
+        )
+        .classList.add("current-active-class");
     } else {
-      document.querySelector(".custom-menu-link-" + i).classList.remove("active");
-      document.querySelector(`.custom-menu-link-${i} a`).classList.remove("active-link");
-      document.querySelector(`section[data-nav="${customElements[i].getAttribute('data-nav')}"]`).removeAttribute("class");
+      document
+        .querySelector(".custom-menu-link-" + i)
+        .classList.remove("active");
+      document
+        .querySelector(`.custom-menu-link-${i} a`)
+        .classList.remove("active-link");
+      document
+        .querySelector(
+          `section[data-nav="${customElements[i].getAttribute("data-nav")}"]`
+        )
+        .removeAttribute("class");
     }
   }
 });
