@@ -1,10 +1,230 @@
+
 body {
-	background: rgb(137, 60, 66);
-	background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(47, 49, 90, 1) 100%);
+	background-color: (rgb(133, 38, 133)); /* Modified background color */
 	margin: 0;
-	font-family: "cairo", serif;
+	font-family: "Arial", sans-serif; /* Changed font family */
+	color: #000; /* Changed text color */
+}
+
+html {
+	scroll-behavior: auto !important; /* Changed scroll behavior */
+}
+
+/* Typography */
+h1 {
+	font-family: "Arial", sans-serif; /* Changed font family */
+	font-size: 2.5em; /* Decreased font size */
+	margin: 1em; /* Modified margin */
+    color: #a708ac; /* Changed text color */
+}
+
+@media only screen and (min-width: 35em) {
+	h1 {
+		font-size: 5em; /* Decreased font size */
+		margin: 1em 2rem; /* Modified margin */
+	}
+}
+
+h2 {
+	border-bottom: 5px solid  #f57ef1; /* Modified border color */
+	font-family: "Arial", sans-serif; /* Changed font family */
+	font-size: 2.5em; /* Decreased font size */
+	color:  #a708ac; /* Changed text color */
+}
+
+p {
+	line-height: 1.8em; /* Increased line height */
+	color: #555; /* Changed text color */
+    
+}
+
+/* Layout Rules */
+main {
+	margin: 5vh 1em; /* Modified margin */
+}
+
+.main-hero {
+	min-height: 50vh; /* Increased minimum height */
+	padding-top: 2em; /* Decreased padding */
+}
+
+section {
+	position: relative;
+	min-height: 70vh; /* Increased minimum height */
+}
+
+/* Navigation Styles */
+.magic-navbar ul {
+	padding: 0.5em; /* Modified padding */
+	margin: 0;
+	text-align: center; /* Changed text alignment */
+    font: 15px sans-serif;
+    letter-spacing: 1px;
+    color:  #a708ac; /* Changed text color */
+    
+}
+
+.magic-navbar li {
+	display: inline-block;
+	padding-top: 10px; /* Decreased padding */
+}
+
+.magic-navbar .menu_link {
+	display: inline-block; /* Changed display */
+	padding: 0.8em; /* Modified padding */
+	font-weight: normal; /* Changed font weight */
+	text-decoration: none;
 	color: #fff;
 }
-html {
-	scroll-behavior: smooth !important;
+
+.magic-navbar .menu_link:hover {
+	background: #555; /* Changed background color */
+	color: #fff;
+	transition: ease 0.3s all;
+}
+
+#magic-navbar {
+	display: flex;
+	justify-content: center; /* Changed justification */
+	list-style: none;
+	height: 60px; /* Modified height */
+	text-transform: capitalize; /* Changed text transformation */
+	font-size: 16px; /* Increased font size */
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 6000;
+	background: #000; /* Changed background color */
+	box-shadow: 0 2px 20px 0 rgba(46, 61, 73, 0.2); /* Modified box shadow */
+	color: #fff;
+	font-weight: 400;
+	letter-spacing: 1px; /* Increased letter spacing */
+}
+
+li a {
+	text-decoration: none;
+	padding: 15px; /* Decreased padding */
+	cursor: pointer;
+}
+
+a,
+a:visited,
+a:active {
+	color: inherit;
+}
+
+/* Active */
+.active {
+	background-color: #f57ef1; /* Modified background color */
+	font-weight: normal; /* Changed font weight */
+    padding-top: 5%;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: #000000; /* Changed text color */
+}
+
+
+/* Header */
+.trick-header {
+	background: #f2f2f2; /* Changed background color */
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+
+/* Footer Styles */
+.trick-footer {
+	background: #333; /* Changed background color */
+	padding: 2em;
+	color: #fff;
+    align-content: center;
+    text-align: center; /* Added text alignment */
+  margin-top: auto; /* Added margin top */
+}
+
+.trick-footer p {
+	color: #eee; /* Changed text color */
+}
+
+/* Landing Container */
+.magic-section-container {
+	padding: 2em; /* Increased padding */
+	text-align: left; /* Changed text alignment */
+}
+
+@media only screen and (min-width: 35em) {
+	.magic-section-container {
+		max-width: 40em; /* Decreased maximum width */
+		padding: 3em; /* Modified padding */
+	}
+}
+
+section:nth-of-type(even) .magic-section-container {
+	margin-right: auto;
+	margin-left: 0; /* Modified margin */
+}
+
+section:nth-of-type(odd) .magic-section-container::before {
+	content: "";
+	background: rgba(0, 0, 0, 0.1); /* Changed background color */
+	position: absolute;
+	z-index: -5;
+	width: 15vh; /* Decreased width */
+	height: 15vh; /* Decreased height */
+	border-radius: 50%; /* Modified border radius */
+	opacity: 0.5; /* Modified opacity */
+	transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .magic-section-container::before {
+	content: "";
+	background: rgb(255, 255, 255);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.7) 100%); /* Modified linear gradient */
+	position: absolute;
+	top: 5em; /* Modified top position */
+	right: 5em; /* Modified right position */
+	z-index: -5;
+	width: 7.5vh; /* Decreased width */
+	height: 7.5vh; /* Decreased height */
+	border-radius: 50%; /* Modified border radius */
+	opacity: 0.7; /* Modified opacity */
+	transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .magic-section-container::after {
+	content: "";
+	background: rgb(255, 255, 255);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.7) 100%); /* Modified linear gradient */
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -5;
+	width: 7.5vh; /* Decreased width */
+	height: 7.5vh; /* Decreased height */
+	border-radius: 50%; /* Modified border radius */
+	opacity: 0.7; /* Modified opacity */
+	transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .magic-section-container::after {
+	content: "";
+	background: rgb(255, 255, 255);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.7) 100%); /* Modified linear gradient */
+	position: absolute;
+	right: 10vw; /* Modified right position */
+	bottom: -2em; /* Modified bottom position */
+	z-index: -5;
+	width: 11.25vh; /* Decreased width */
+	height: 11.25vh; /* Decreased height */
+	border-radius: 50%; /* Modified border radius */
+	opacity: 0.7; /* Modified opacity */
+	transition: ease 0.5s all;
+}
+
+section.current-active-class {
+	background: rgb(0, 0, 0);
+	background: linear-gradient(0deg
+
+, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); /* Modified linear gradient */
 }
